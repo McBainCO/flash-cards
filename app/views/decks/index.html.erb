@@ -1,0 +1,12 @@
+<%= link_to "New Deck", "decks#new" %>
+
+
+<% @decks.each do |deck| %>
+
+   <%= link_to deck.name, "/decks/#{deck.id}" %>
+
+   <%= link_to "Edit", "/decks/#{deck.id}" %>
+
+   <%= link_to "Delete", "/decks/#{deck.id}", method: :delete, confirm: "Are you sure?" %>
+
+<% end %>

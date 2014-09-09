@@ -1,12 +1,12 @@
-<%= link_to "New Deck", "decks#new" %>
+<%= link_to "New Deck", new_deck_path %>
 
 
 <% @decks.each do |deck| %>
 
-   <%= link_to deck.name, "/decks/#{deck.id}" %>
+   <%= link_to deck.name, deck_path(deck.id) %>
 
-   <%= link_to "Edit", "/decks/#{deck.id}" %>
+   <%= link_to "Edit", edit_deck_path(deck.id) %>
 
-   <%= link_to "Delete", "/decks/#{deck.id}", method: :delete, confirm: "Are you sure?" %>
+   <%= link_to "Delete", deck_path(deck.id), method: :delete, confirm: "Are you sure?" %>
 
 <% end %>
